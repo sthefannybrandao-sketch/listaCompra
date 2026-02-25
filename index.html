@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>lista de compras</title>
+    <link rel = "stlyesheet" href ="style.css">
+</head>
+<body>
+    <div class="container"> 
+    <h1> lista de compras</h1>
+
+     <form id="formlista">
+         <input type="text" id= "produto"placeholder = " digite o seu produto">
+         <button type="submit">adicionar</button>
+     </form>
+    <!-- paragrafo que exibe total de iens na lista-->
+     <p id ="contador"> total: 0 itens</p>
+     <!--paragrafo que exibe a mensagem erro-->
+     <p id ="mensagemErro"></p>
+    <!-- exibir lista de compras-->
+     <ul id="lista"></ul>
+    <!--referenciando o nosso arquivo em js para chamar as funcoes-->
+     <script src = "script.js"></script>
+ </div>
+</body>
+</html>
