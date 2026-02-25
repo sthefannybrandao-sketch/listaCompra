@@ -1,45 +1,32 @@
-//capturando os elementos da pagina html
+// capturando os elementos da pagina html
 const form = document.querySelector('#formLista')
-const imput = document.querySelector('#produto')
-
-// document.querySelector = selencionar um elemento html
-const contador = document.querySelector('#contafor')
+const input = document.querySelector('#produto')
+const contador = document.querySelector('#contador')
 const mensagemErro = document.querySelector('#mensagemErro')
 const lista = document.querySelector('#lista')
 
-let totalItens = 0
-
+let totalItem = 0
 
 form.addEventListener('submit', function(event){
-    event.preventDefault()// impede o carregamento do site
-    // so vai caregar a pagina depois que o campo for prenchido
-    const valorImput = imput.Value()//pegando valor do imput
+    event.preventDefault()
 
-    //validando se o campo foi prenchido
-    if(valorImput.trim() ===''){ 
-        //trim()retirar o espaco extras do que foi digitadp
-        mesageErro.inertext = " digite um produto"
-    return;//acaba a validacao funcao aqui
-         
+    const valorInput = input.value.trim()
+
+    // validando se o campo foi preenchido
+    if(valorInput === ''){ 
+        mensagemErro.innerText = "Digite um produto"
+        return
     }
 
-    mensagemErro.inertext = '';// volta a defenir a mensagem como vazia
+    mensagemErro.innerText = ''
 
-        //criando novo item para adicionar na lista de compras
-      const novoItem = document.createElement('li')
-      //adicionando o valor digitado no campo dentro da nossa lista
-      novoItem.innertext = valorInput
+    const novoItem = document.createElement('li')
+    novoItem.innerText = valorInput
 
-      // adicionar esse novo item no HTML(novo intem da lista)
-      lista.appendChild(novoItem)
+    lista.appendChild(novoItem)
 
-      // atualizar o contador
-      totalItem++
-      //mudar o texto do paragrafo
+    totalItem++
+    contador.innerText = `Total: ${totalItem} itens.`
 
-      contador.innerText = `total : ${totalItens} itens.` //'' temple string
-      // valor da string dentro do '' vai mudar de acordo com o codigo
-
-      input.value = ''
-}
-);
+    input.value = ''
+});
